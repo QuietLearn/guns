@@ -11,6 +11,9 @@
     <name>guns</name>
     <description>guns 的spring boot版本</description>
 
+    <!--添加“parent”标签里的内容后，“spring-boot-starter-parent”会为开发者提供常用jar的版本管理，所以我们不需要指定版本，
+    使用人家提供好的就可以了。当然，指定也是可以的，这会覆盖官方默认的版本，不推荐
+    还有一种情况，使用了依赖管理器的也可以不写-->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -104,6 +107,12 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <scope>runtime</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
         </dependency>
         <!--   需要分布式session的话需要放开注释
         <dependency>
